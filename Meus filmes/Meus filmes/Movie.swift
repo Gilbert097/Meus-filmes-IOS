@@ -16,5 +16,6 @@ class Movie{
     init(title:String, description:String, image:UIImage? = nil){
         self.title = title
         self.description = description
+        self.image = image
     }
 }
