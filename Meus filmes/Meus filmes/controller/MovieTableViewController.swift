@@ -58,7 +58,14 @@ class MovieTableViewController: UITableViewController {
         movieTableViewCell.movieImageView.image = currentItem.image
         movieTableViewCell.titleLabel.text = currentItem.title
         movieTableViewCell.descriptionLabel.text = currentItem.description
+        
+        //Arredondando imagem
+        movieTableViewCell.movieImageView.layer.cornerRadius = 42
+        movieTableViewCell.movieImageView.clipsToBounds = true
+        
+        //Ocultando linha de separação dos items
+        movieTableViewCell.separatorInset = UIEdgeInsets(top: CGFloat(0), left: movieTableViewCell.bounds.size.width, bottom: CGFloat(0), right: CGFloat(0));
+        
         return movieTableViewCell
     }
 }
-

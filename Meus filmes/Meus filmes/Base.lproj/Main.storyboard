@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2lu-Q1-Tfh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qCk-dm-2d8">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -11,7 +11,7 @@
         <scene sceneID="Zku-Xv-Nbp">
             <objects>
                 <tableViewController id="2lu-Q1-Tfh" customClass="MovieTableViewController" customModule="Meus_filmes" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Xh-wm-K0B">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Xh-wm-K0B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -31,31 +31,34 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ah3-lT-Zvo">
-                                            <rect key="frame" x="100" y="28" width="52.333333333333343" height="44"/>
+                                            <rect key="frame" x="117.99999999999999" y="25.000000000000004" width="52.333333333333329" height="50.333333333333343"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enm-eV-hlN" userLabel="Label Title">
-                                                    <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="23.666666666666668"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="30"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAj-Z6-1AO" userLabel="Label Description">
-                                                    <rect key="frame" x="0.0" y="23.666666666666664" width="52.333333333333336" height="20.333333333333336"/>
+                                                    <rect key="frame" x="0.0" y="30" width="52.333333333333336" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SAj-Z6-1AO" firstAttribute="top" secondItem="Ah3-lT-Zvo" secondAttribute="top" constant="30" id="lG2-oT-i0E"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="oU4-5m-PbZ" firstAttribute="leading" secondItem="DOp-Hb-P8e" secondAttribute="leading" constant="8" id="8bG-Vg-l2Y"/>
-                                        <constraint firstItem="Ah3-lT-Zvo" firstAttribute="centerY" secondItem="DOp-Hb-P8e" secondAttribute="centerY" id="KJM-hT-taT"/>
-                                        <constraint firstItem="Ah3-lT-Zvo" firstAttribute="leading" secondItem="oU4-5m-PbZ" secondAttribute="trailing" constant="8" id="Rds-DG-4OT"/>
-                                        <constraint firstItem="Ah3-lT-Zvo" firstAttribute="top" secondItem="DOp-Hb-P8e" secondAttribute="topMargin" constant="17" id="Zte-X4-U5i"/>
+                                        <constraint firstItem="Ah3-lT-Zvo" firstAttribute="centerY" secondItem="DOp-Hb-P8e" secondAttribute="centerY" id="NYn-I0-d6w"/>
+                                        <constraint firstItem="Ah3-lT-Zvo" firstAttribute="leading" secondItem="oU4-5m-PbZ" secondAttribute="trailing" constant="26" id="Z1g-7X-Nmx"/>
                                         <constraint firstItem="oU4-5m-PbZ" firstAttribute="centerY" secondItem="DOp-Hb-P8e" secondAttribute="centerY" id="cfM-IV-aeb"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="SAj-Z6-1AO" id="Pzk-Nb-c9r"/>
                                     <outlet property="movieImageView" destination="oU4-5m-PbZ" id="uvF-Ca-Tnf"/>
