@@ -55,9 +55,13 @@ class MovieTableViewController: UITableViewController {
         let currentItem = movies[indexPath.row]
         let identifier = "movieCell"
         let movieTableViewCell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! MovieTableViewCell
-        movieTableViewCell.movieImageView.image = currentItem.image
-        movieTableViewCell.titleLabel.text = currentItem.title
-        movieTableViewCell.descriptionLabel.text = currentItem.description
+        bindViewCell(indexPath: indexPath, movieTableViewCell: movieTableViewCell, movie: currentItem)
+        return movieTableViewCell
+    }
+    private func bindViewCell(indexPath: IndexPath, movieTableViewCell:MovieTableViewCell, movie: Movie){
+        movieTableViewCell.movieImageView.image = movie.image
+        movieTableViewCell.titleLabel.text = movie.title
+        movieTableViewCell.descriptionLabel.text = movie.description
         
         //Arredondando imagem
         movieTableViewCell.movieImageView.layer.cornerRadius = 42
@@ -65,7 +69,13 @@ class MovieTableViewController: UITableViewController {
         
         //Ocultando linha de separação dos items
         movieTableViewCell.separatorInset = UIEdgeInsets(top: CGFloat(0), left: movieTableViewCell.bounds.size.width, bottom: CGFloat(0), right: CGFloat(0));
-        
-        return movieTableViewCell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier, identifier == "movieDetail"{
+            let index = tableView.indexPathForSelectedRow
+            let movieDetailViewController = segue.destination as! MovieDetailViewController
+            movieDetailViewController.currentMovie = self.movies[index!.row]
+        }
     }
 }

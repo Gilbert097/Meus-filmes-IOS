@@ -15,6 +15,7 @@
 		D4183FB525C99ACA00EB97BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4183FB325C99ACA00EB97BF /* LaunchScreen.storyboard */; };
 		D4183FBF25C99B8200EB97BF /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4183FBE25C99B8200EB97BF /* Movie.swift */; };
 		D4183FC525C9C17A00EB97BF /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4183FC425C9C17A00EB97BF /* MovieTableViewCell.swift */; };
+		D4183FCB25C9D23400EB97BF /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4183FCA25C9D23400EB97BF /* MovieDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D4183FB625C99ACA00EB97BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4183FBE25C99B8200EB97BF /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		D4183FC425C9C17A00EB97BF /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		D4183FCA25C9D23400EB97BF /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				D4183FC325C9C15300EB97BF /* cell */,
 				D4183FAC25C99AC100EB97BF /* MovieTableViewController.swift */,
+				D4183FCA25C9D23400EB97BF /* MovieDetailViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				D4183FAD25C99AC100EB97BF /* MovieTableViewController.swift in Sources */,
 				D4183FA925C99AC100EB97BF /* AppDelegate.swift in Sources */,
 				D4183FBF25C99B8200EB97BF /* Movie.swift in Sources */,
+				D4183FCB25C9D23400EB97BF /* MovieDetailViewController.swift in Sources */,
 				D4183FAB25C99AC100EB97BF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
