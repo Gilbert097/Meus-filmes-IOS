@@ -10,19 +10,57 @@
         <!--Meus Filmes-->
         <scene sceneID="Zku-Xv-Nbp">
             <objects>
-                <tableViewController id="2lu-Q1-Tfh" customClass="MovieListViewController" customModule="Meus_filmes" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2lu-Q1-Tfh" customClass="MovieTableViewController" customModule="Meus_filmes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Xh-wm-K0B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieItemList" id="KzU-gZ-8pf">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="100" id="KzU-gZ-8pf" customClass="MovieTableViewCell" customModule="Meus_filmes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KzU-gZ-8pf" id="DOp-Hb-P8e">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oU4-5m-PbZ" userLabel="Image View Movie">
+                                            <rect key="frame" x="8" y="8" width="84" height="84"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="84" id="4Fb-MW-FEC"/>
+                                                <constraint firstAttribute="width" constant="84" id="a7H-wl-YgX"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ah3-lT-Zvo">
+                                            <rect key="frame" x="100" y="28" width="52.333333333333343" height="44"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enm-eV-hlN" userLabel="Label Title">
+                                                    <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="23.666666666666668"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAj-Z6-1AO" userLabel="Label Description">
+                                                    <rect key="frame" x="0.0" y="23.666666666666664" width="52.333333333333336" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="oU4-5m-PbZ" firstAttribute="leading" secondItem="DOp-Hb-P8e" secondAttribute="leading" constant="8" id="8bG-Vg-l2Y"/>
+                                        <constraint firstItem="Ah3-lT-Zvo" firstAttribute="centerY" secondItem="DOp-Hb-P8e" secondAttribute="centerY" id="KJM-hT-taT"/>
+                                        <constraint firstItem="Ah3-lT-Zvo" firstAttribute="leading" secondItem="oU4-5m-PbZ" secondAttribute="trailing" constant="8" id="Rds-DG-4OT"/>
+                                        <constraint firstItem="Ah3-lT-Zvo" firstAttribute="top" secondItem="DOp-Hb-P8e" secondAttribute="topMargin" constant="17" id="Zte-X4-U5i"/>
+                                        <constraint firstItem="oU4-5m-PbZ" firstAttribute="centerY" secondItem="DOp-Hb-P8e" secondAttribute="centerY" id="cfM-IV-aeb"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="SAj-Z6-1AO" id="Pzk-Nb-c9r"/>
+                                    <outlet property="movieImageView" destination="oU4-5m-PbZ" id="uvF-Ca-Tnf"/>
+                                    <outlet property="titleLabel" destination="enm-eV-hlN" id="6Tx-cG-a8M"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
